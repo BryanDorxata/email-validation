@@ -12,8 +12,8 @@ document.addEventListener('submit', function(e) {
     const emailPattern = /^[^\s@]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
     if (
-      atCount !== 1 ||              
-      !emailPattern.test(value)        
+      atCount !== 1 ||
+      !emailPattern.test(value)
     ) {
       isValid = false;
       field.classList.add('email-invalid');
@@ -25,7 +25,8 @@ document.addEventListener('submit', function(e) {
   });
 
   if (!isValid) {
-    e.preventDefault();
+    e.preventDefault(); 
+    e.stopPropagation(); 
     alert('Please correct the invalid email fields before submitting.');
   }
 });
